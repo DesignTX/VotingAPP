@@ -1,6 +1,8 @@
 const port = 3000;
 const express = require("express");
-const handle = require("./handlers");
+const handle = require("./handlers/index");
+// const cors = require("cors");
+// const bodyparser = require("body-parser");
 
 const app = express();
 
