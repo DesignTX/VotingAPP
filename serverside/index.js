@@ -1,10 +1,17 @@
-const port = 3000;
+require("dotenv").config();
+const port = process.env.PORT;
+
 const express = require("express");
-const handle = require("./handlers/index");
-// const cors = require("cors");
-// const bodyparser = require("body-parser");
+const cors = require("cors");
+const bodyparser = require("body-parser");
 
 const app = express();
+
+const handle = require("./handlers/index");
+const db = require("./models");
+
+app.use(cors());
+app.use(bodyparser.json());
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
